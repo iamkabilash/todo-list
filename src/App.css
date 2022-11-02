@@ -1,7 +1,26 @@
-body{
-  margin: 25px;
+.App {
+  font-family: sans-serif;
+  text-align: center;
 }
-.completed{
-  color: red;
+body{
+  background-color: #1f1e1e;
+}
+.todo-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+.todo-box h3{
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  width: 150px;
+}
+.todo-box .completed {
+  color: #810900;
   text-decoration: line-through;
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

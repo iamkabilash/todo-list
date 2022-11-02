@@ -1,11 +1,11 @@
-import React from "react";
-
-const ListItem = (props) =>{
+const ListItem = ({obj, index, onDone, onDelete}) =>{
     return(
-        <div className={props.obj.completed && "completed"}>
-            <p>{props.obj.name}</p>
-            <button onClick={() => props.onDone(props.obj)}>Mark as done</button>
-            <button onClick={() => props.onDelete(props.obj)}>Delete</button>
+        <div className="todo-box flex flex-row w-screen items-center justify-center mt-[16px]" key={index}>
+            <h3 className={obj.completed && "completed"}>{obj.name}</h3>
+            <div className="flex flex-row items-center gap-[10px]">
+                <button className="bg-green-300 px-[10px] font-semibold rounded hover:bg-green-500" onClick={() => onDone(obj)}>Mark as done</button>
+                <button className="bg-red-300 px-[10px] font-semibold rounded hover:bg-red-500" onClick={() => onDelete(obj)}>Delete</button>
+            </div>
         </div>
     );
 }
